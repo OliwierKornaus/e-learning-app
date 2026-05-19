@@ -1,13 +1,194 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-learning App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini Aplikacja E-learningowa</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Witaj w aplikacji e-learningowej</h1>
+<div class="container">
+
+  <h1>Mini Aplikacja E-learningowa — Kotlin</h1>
+
+  <!-- THEORY -->
+
+  <section class="section">
+    <h2>1. Teoria — Funkcje w Kotlinie</h2>
+
+    <p>
+      Funkcje w Kotlinie służą do wykonywania określonych operacji i pozwalają
+      organizować kod w czytelny sposób. Funkcję definiujemy przy użyciu słowa
+      kluczowego <strong>fun</strong>.
+    </p>
+
+    <br>
+
+    <div class="code-box">
+<pre>
+fun dodaj(a: Int, b: Int): Int {
+    return a + b
+}
+</pre>
+    </div>
+
+    <p>
+      Kotlin wspiera również funkcje jednolinijkowe, parametry domyślne,
+      funkcje lambda oraz programowanie funkcyjne.
+    </p>
+  </section>
+
+  <!-- QUIZ -->
+
+  <section class="section">
+    <h2>2. Quiz ABCD</h2>
+
+    <div class="question">
+      <h3>1. Jak definiujemy funkcję w Kotlinie?</h3>
+
+      <div class="answers">
+        <label><input type="radio" name="q1" value="0"> function mojaFunkcja()</label>
+        <label><input type="radio" name="q1" value="1"> fun mojaFunkcja()</label>
+        <label><input type="radio" name="q1" value="0"> def mojaFunkcja()</label>
+        <label><input type="radio" name="q1" value="0"> create mojaFunkcja()</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>2. Jakiego typu jest wartość zwracana przez funkcję?</h3>
+
+      <div class="answers">
+        <label><input type="radio" name="q2" value="0"> Parametr</label>
+        <label><input type="radio" name="q2" value="0"> Obiekt</label>
+        <label><input type="radio" name="q2" value="1"> Typ po dwukropku</label>
+        <label><input type="radio" name="q2" value="0"> Nazwa klasy</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>3. Co oznacza słowo kluczowe return?</h3>
+
+      <div class="answers">
+        <label><input type="radio" name="q3" value="0"> Tworzy zmienną</label>
+        <label><input type="radio" name="q3" value="1"> Zwraca wynik funkcji</label>
+        <label><input type="radio" name="q3" value="0"> Importuje bibliotekę</label>
+        <label><input type="radio" name="q3" value="0"> Kończy program</label>
+      </div>
+    </div>
+
+    <button onclick="checkQuiz()">Sprawdź Quiz</button>
+
+    <div class="result" id="quizResult"></div>
+  </section>
+
+  <!-- DRAG DROP -->
+
+  <section class="section">
+    <h2>3. Drag & Drop</h2>
+
+    <p>Przeciągnij elementy w poprawnej kolejności:</p>
+
+    <br>
+
+    <div class="drag-container">
+      <div class="drag-item" draggable="true">return wynik</div>
+      <div class="drag-item" draggable="true">fun suma(a:Int,b:Int):Int</div>
+      <div class="drag-item" draggable="true">{ }</div>
+    </div>
+
+    <div class="dropzone" id="dropzone">
+      Upuść tutaj elementy...
+    </div>
+
+    <br>
+
+    <button onclick="checkDragDrop()">Sprawdź Kolejność</button>
+
+    <div class="result" id="dragResult"></div>
+  </section>
+
+  <!-- FILL GAPS -->
+
+  <section class="section">
+    <h2>4. Uzupełnij brakujące fragmenty kodu</h2>
+
+    <div class="code-box">
+<pre>
+<input type="text" id="gap1"> suma(a:Int,b:Int):Int{
+   <input type="text" id="gap2"> a+b
+}
+</pre>
+    </div>
+
+    <button onclick="checkGaps()">Sprawdź Kod</button>
+
+    <div class="result" id="gapResult"></div>
+  </section>
+
+  <!-- FLASHCARDS -->
+
+  <section class="section">
+    <h2>5. Fiszki</h2>
+
+    <div class="flashcards">
+
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            Co oznacza "fun"?
+          </div>
+          <div class="card-back">
+            Służy do definiowania funkcji w Kotlinie.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            Do czego służy return?
+          </div>
+          <div class="card-back">
+            Zwraca wynik działania funkcji.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            Czym są parametry funkcji?
+          </div>
+          <div class="card-back">
+            To dane przekazywane do funkcji.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SUMMARY -->
+
+  <section class="section">
+    <h2>6. Podsumowanie i Ocena</h2>
+
+    <div class="summary-box">
+      <div class="score" id="finalScore">
+        Wynik: 0%
+      </div>
+
+      <div class="grade" id="finalGrade">
+        Ocena: -
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
